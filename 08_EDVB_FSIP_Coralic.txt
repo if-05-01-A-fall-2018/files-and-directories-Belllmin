@@ -1,0 +1,59 @@
+Belmin Coralic, 3AHIF
+
+1. FAT Main Memory Requirements
+
+   How many blocks does the disk have?
+a) 250 GB = 250 * 1024 MB * 1024 KB = 262.144.000
+
+   How many entries must the FAT have?
+b) Gleich wie block size - 262.144.000
+
+   What size must be a table entry?
+c) log2(262.144.000) = 27.96578428 - wir können 32 Bit verwenden
+
+   Finally what size is the FAT now?
+d) (262.144.000 * 32) / 8 = 104.857.600.0 / 1024 = 102.400.0 / 1024 = 1000 MB = 1 GB
+
+2. Random Access of Files
+
+a)
+b)
+
+a)
+b)
+
+3. UFS (i.node) File Size
+
+1KB = 1024
+1024 / 4 = 256;
+
+Ersten 10 = 10 * 1024 = 10.240
+Single direct pointer = 256 * 1024 = 262.144
+Double direct pointer = 256^2 * 1024 = 67.108.864
+Triple direct pointer = 256^3 * 1024 = 17.179.869.184
+
+
+4KB = 4096
+4096B / 4 = 1024
+
+Ersten 10 = 10 * 4096B = 40960B
+Single direct pointer = 1024B * 4096 = 4194304B
+Double direct pointer = 1024B^2 * 4096 = 4294967296B
+Triple direct pointer = 1024B^3 * 4096 = 4.398.046.511.104
+
+
+4. UFS File Size
+
+(512 / 4) * 512 = 65 536
+(512 / 4) * (512 / 4) * 512 = 8 388 608
+
+(1024 / 4) * 1024 = 262 144
+(1024 / 4) * (1024 / 4) * 1024 = 67 108 864
+
+A: 512 ist besser, weil in einem double indirect mehr files ausgehen
+B: Nichts, da es mit 1024 auch geht.
+
+
+
+
+
